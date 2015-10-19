@@ -1,13 +1,48 @@
 ---
 title: "SNL Speakers"
 author: "Jonathan Peelle"
-date: "October 19, 2015"
+#date: "October 19, 2015"
 output: pdf_document
 ---
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Introduction and motivation
+---------------------------
+
+
+I've uploaded the data and analysis (i.e., this document, written in Rmarkdown) to a public github repository so that others can contribute as well: <https://github.com/jpeelle/SNLspeakers>.
+
+
+
+Data
+----
+
+I obtained data on speakers from previous PDFs of meeting programs, downloaded from <http://www.neurolang.org/previous/> on October 19, 2015.
+
+I put together a spreadsheet listing speakers for each year, along with their gender, country, type of talk (keynote, debate, symposium), and so on, in `SNLspeakerdata.tsv` (tab-separated text file). The data cover 7 years, 2009-2015 inclusive.
+
+I determined sex and country information based on my best guesses from the program and assumptions based on photos or first names. For "board membership" I judged based on the current board published in the PDF program from each year. (My impression is that I may have missed some speakers who had society affiliations of other sorts.)
+
+I'm including all relevant code in this document, which you should be able to paste in to an R console and recreate the numbers and plots. You can see the Rmarkdown source (`SNLspeakers.Rmd`) for the plain-text version.
+
+
+Results
+-------
+
+Between 2009-2015 SNL has had XX total speakers, of whom XX (XX%) have been women.
+
+
+
+Comment
+-------
+
+
+
+#Acknowledgments
+#---------------
+
+
+You can embed an R code chunk like this:
 
 ```{r}
 summary(cars)
