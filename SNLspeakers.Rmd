@@ -1,7 +1,7 @@
 ---
 title: "SNL Speakers"
 author: "Jonathan Peelle"
-#date: "October 19, 2015"
+date: "October 20, 2015"
 output: pdf_document
 ---
 
@@ -9,8 +9,9 @@ output: pdf_document
 Introduction and motivation
 ---------------------------
 
+As we plan future meetings of the [Society for the Neurobiology of Language](http://neurolang.org) (SNL) the topic of speaker diversity has been raised. Although a full treatment of the topic would take up too much space, suffice it to say that most of us—including scientists of all genders—show unconscious bias (Raymond, 2013). In discussions on balance of speakers at conferences it is frequently a useful first step to look at the data on actual speakers (Martin, 2014). In that spirit, I've put together this short summary of previous SNL speakers.
 
-I've uploaded the data and analysis (i.e., this document, written in Rmarkdown) to a public github repository so that others can contribute as well: <https://github.com/jpeelle/SNLspeakers>.
+I've uploaded the data and analysis (i.e., this document, written in Rmarkdown) to a public github repository so that others can view and contribute: <https://github.com/jpeelle/SNLspeakers>. 
 
 
 
@@ -19,39 +20,77 @@ Data
 
 I obtained data on speakers from previous PDFs of meeting programs, downloaded from <http://www.neurolang.org/previous/> on October 19, 2015.
 
-I put together a spreadsheet listing speakers for each year, along with their gender, country, type of talk (keynote, debate, symposium), and so on, in `SNLspeakerdata.tsv` (tab-separated text file). The data cover 7 years, 2009-2015 inclusive.
+I created a spreadsheet listing speakers for each year, along with their gender, country, type of talk (keynote, debate, symposium), and so on, in `SNLspeakers_data.tsv` (tab-separated text file). The data cover 7 years, 2009-2015 inclusive.
 
 I determined sex and country information based on my best guesses from the program and assumptions based on photos or first names. For "board membership" I judged based on the current board published in the PDF program from each year. (My impression is that I may have missed some speakers who had society affiliations of other sorts.)
 
+Although the programs refer to "panel" discussions, I've used the term "debate", which is more common in practice when talking about past SNL meetings.
+
 I'm including all relevant code in this document, which you should be able to paste in to an R console and recreate the numbers and plots. You can see the Rmarkdown source (`SNLspeakers.Rmd`) for the plain-text version.
+
+```{r}
+# Preliminary R code: libraries we'll use, and read in the data
+
+library("ggplot2")
+data <- read.csv("SNLspeakers_data.tsv", header = TRUE, sep = "\t")
+
+```
 
 
 Results
 -------
 
-Between 2009-2015 SNL has had XX total speakers, of whom XX (XX%) have been women.
+Between 2009-2015 SNL has had 47 total speakers, of whom 14 (30%) have been women. No year has had over 38% female speakers.
+
+```{r}
+summary(data$gender)
+ggplot(data, aes(factor(year), fill = factor(gender))) + geom_bar() + 
+  xlab("Year") +
+  ylab("Number of speakers")
+```
+
+
+The pattern is fairly similar across talk type, with the exception being equal gender representation in the 2015 invited symposium.
+
+
+```{r}
+# Breaking down by talk type
+
+aggregate(data$gender, list(data$talkType), FUN="summary")
+
+ggplot(data, aes(factor(talkType), fill = factor(gender))) + geom_bar() + 
+  xlab("Talk type") +
+  ylab("Number of speakers")
+
+```
+
 
 
 
 Comment
 -------
 
+For the first 7 years SNL has had an average 70/30 balance of male-to-female speakers. If our goal is to have approximately equal numbers of male and female speakers overall, we should aim for 70% female speakers for the next 7 years (through SNL2022).
+
+(If that 70% number sounds odd to you, it did to me also. But it did **not** seem nearly as odd for the past 7 years when we had 70% male speakers. That mismatch is unconscious gender bias in a nutshell.)
+
+A few useful articles and blog posts on speaker diversity:
+
+* The aforementioned Martin (2014) [Ten simple rules to achieve conference speaker gender balance](http://dx.doi.org/10.1371/journal.pcbi.1003903)
+* [Increasing diversity at your conference](http://www.ashedryden.com/blog/increasing-diversity-at-your-conference) by Ashe Dryden
+* [Suggestions for speaker diversity](http://phylogenomics.blogspot.com/2014/10/some-suggestions-for-having-diverse.html) by Jonathan Eisen
+
+I have not looked at other types of speaker diversity, such as nationality, race/ethnicity, career stage, etc. These would be natural additional areas to include in a discussion on diversity and inclusiveness.
 
 
-#Acknowledgments
-#---------------
+
+References
+----------
+
+Martin JL (2014) Ten simple rules to achieve conference speaker gender balance. PLOS Computational Biology 10:e1003903. <http://dx.doi.org/10.1371/journal.pcbi.1003903> ([PDF](http://raymondlab.weebly.com/uploads/2/0/9/9/20996868/nature_-_most_of_us_are_biased.pdf))
+
+Raymond J (2013) Sexist attitudes: Most of us are biased. Nature 495:33-34. <http://dx.doi.org/10.1038/495033a>
 
 
-You can embed an R code chunk like this:
 
-```{r}
-summary(cars)
-```
 
-You can also embed plots, for example:
-
-```{r, echo=FALSE}
-plot(cars)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
