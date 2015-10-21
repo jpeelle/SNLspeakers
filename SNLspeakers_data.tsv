@@ -1,48 +1,48 @@
 year	name	gender	country	boardMember	title	talkType
-2009	Michael Petrides	M	Canada	0	Recent insights into the anatomical pathways for language	keynote
-2009	Yosef Grodzinsky	M	USA	0	The battle for Broca's area	debate
-2009	Peter Hagoort	M	Netherlands	1	The battle for Broca's area	debate
-2009	Charlie Schroeder	M	USA	0	Neuronal oscillations as instruments of brain operation and perception	keynote
-2009	Kate Watkins	F	UK	0	What can brain imaging tell us about developmental disorders of speech and language?	keynote
-2009	Greg Hickok	M	USA	0	Motor contribution to speech perception	debate
-2009	Luciano Fadiga	M	Italy	0	Motor contribution to speech perception	debate
-2009	Simon Fisher	M	UK	0	Building bridges between genes, brains and language	keynote
-2010	Karl Deisseroth	M	USA	0	Optogenetics: Development and application	keynote
-2010	Alex Martin	M	USA	0	The neural architecture of semantic memory	debate
-2010	Karalyn Patterson	F	UK	0	The neural architecture of semantic memory	debate
-2010	Daniel Margoliash	M	USA	0	Evaluating the strenghts and limitations of birdsong as a model for speech and language	keynote
-2010	Cathy Price	F	UK	1	The visual word form area: selective for words?	debate
-2010	Stan Dehaene	M	France	0	The visual word form area: selective for words?	debate
-2011	Troy Hackett	M	USA	0	Primate auditory cortex: Principles of organization and future directions	keynote
-2011	David Poeppel	M	USA	0	Mechanisms underlying the lateralisation of speech perception	debate
-2011	Sophie Scott	F	UK	0	Mechanisms underlying the lateralisation of speech perception	debate
-2011	Katrin Amunts	F	Germany	0	Broca's region - architecture and novel organizational principles	keynote
-2011	Alfonso Caramazz	M	USA	0	What is the role of the motor system in action concepts?	debate
-2011	Friedemann Pulvermuller	M	UK	0	What is the role of the motor system in action concepts?	debate
-2012	Barbara Finlay	F	USA	0	Beyond columns and areas: Developmental gradients and regionalization of the neocortex	keynote
-2012	Nina Dronkers	F	USA	1	What is the role of the insula in speech and language?	debate
-2012	Julius Fridriksson	M	USA	0	What is the role of the insula in speech and language?	debate
-2012	Nikos Logothetis	M	Germany	0	In vivo connectivity...	keynote
-2012	Jeff Binder	M	USA	1	Role of angular gyrus in semantic processing	debate
-2012	Matt Lambon Ralph	M	UK	0	Role of angular gyrus in semantic processing	debate
-2013	Janer Werker	F	Canada	0	Initial biases and experiential influences on infant speech perception development	keynote
-2013	Terry Sejnowsky	M	USA	0	The dynamic brain	keynote
-2013	Max Coltheart	M	Australia	0	The role of semantic information in reading aloud	debate
-2013	Mark Seidenberg	M	USA	0	The role of semantic information in reading aloud	debate
-2013	Miriam Faust	F	Israel	0	The role of the right hemisphere in figurative language processing	debate
-2013	Alexander Rapp	M	Germany	0	The role of the right hemisphere in figurative language processing	debate
-2013	Robert Knight	M	USA	0	Language viewed from direct cortical recordings	keynote
-2014	Willem Levelt	M	Netherlands	0	Localism vs. holism: The historical origins of studying language and the brain	keynote
-2014	Constance Scharff	F	Germany	0	Singing in the (b)rain	keynote
-2014	Pascal Fries	M	Germany	0	Brain rhythms for bottom-up and top-down signaling	keynote
-2014	Steve Small	M	USA	1	What counts as neurobiology of language	debate
-2014	Angela Friederici	F	Germany	0	What counts as neurobiology of language	debate
-2014	Mike Tomasello	M	Germany	0	Communication without conventions	keynote
-2015	Susan Goldin-Meadow	F	USA	0	Gesture as a mechanism of change	keynote
-2015	Peter Strick	M	USA	0	A tale of two primary motor areas	keynote
-2015	Marsel Mesulam	M	USA	0	Revisiting Wernicke's area	keynote
-2015	Marc Raichle	M	USA	0	The restless brain: How intrinsic activity organizes brain function	keynote
-2015	Naftali Raz	M	USA	0	Aging of the brain: Its modifiers and cognitive correlates	symposium
-2015	Lorraine Tyler	F	UK	1	The adaptive brain: brain and cognition in ageing	symposium
-2015	Jonathan Peelle	M	USA	1	Individual differences in auditory and cognitive factors during spoken language comprehension	symposium
-2015	Pascale Tremblay	F	Canada	1	Speech production in aging: From behaviour to brain imaging	symposium
+2009	Michael Petrides	male	Canada	0	Recent insights into the anatomical pathways for language	keynote
+2009	Yosef Grodzinsky	male	USA	0	The battle for Broca's area	debate
+2009	Peter Hagoort	male	Netherlands	1	The battle for Broca's area	debate
+2009	Charlie Schroeder	male	USA	0	Neuronal oscillations as instruments of brain operation and perception	keynote
+2009	Kate Watkins	female	UK	0	What can brain imaging tell us about developmental disorders of speech and language?	keynote
+2009	Greg Hickok	male	USA	0	Motor contribution to speech perception	debate
+2009	Luciano Fadiga	male	Italy	0	Motor contribution to speech perception	debate
+2009	Simon Fisher	male	UK	0	Building bridges between genes, brains and language	keynote
+2010	Karl Deisseroth	male	USA	0	Optogenetics: Development and application	keynote
+2010	Alex Martin	male	USA	0	The neural architecture of semantic memory	debate
+2010	Karalyn Patterson	female	UK	0	The neural architecture of semantic memory	debate
+2010	Daniel Margoliash	male	USA	0	Evaluating the strenghts and limitations of birdsong as a model for speech and language	keynote
+2010	Cathy Price	female	UK	1	The visual word form area: selective for words?	debate
+2010	Stan Dehaene	male	France	0	The visual word form area: selective for words?	debate
+2011	Troy Hackett	male	USA	0	Primate auditory cortex: Principles of organization and future directions	keynote
+2011	David Poeppel	male	USA	0	Mechanisms underlying the lateralisation of speech perception	debate
+2011	Sophie Scott	female	UK	0	Mechanisms underlying the lateralisation of speech perception	debate
+2011	Katrin Amunts	female	Germany	0	Broca's region - architecture and novel organizational principles	keynote
+2011	Alfonso Caramazz	male	USA	0	What is the role of the motor system in action concepts?	debate
+2011	Friedemann Pulvermuller	male	UK	0	What is the role of the motor system in action concepts?	debate
+2012	Barbara Finlay	female	USA	0	Beyond columns and areas: Developmental gradients and regionalization of the neocortex	keynote
+2012	Nina Dronkers	female	USA	1	What is the role of the insula in speech and language?	debate
+2012	Julius Fridriksson	male	USA	0	What is the role of the insula in speech and language?	debate
+2012	Nikos Logothetis	male	Germany	0	In vivo connectivity...	keynote
+2012	Jeff Binder	male	USA	1	Role of angular gyrus in semantic processing	debate
+2012	Matt Lambon Ralph	male	UK	0	Role of angular gyrus in semantic processing	debate
+2013	Janet Werker	female	Canada	0	Initial biases and experiential influences on infant speech perception development	keynote
+2013	Terry Sejnowsky	male	USA	0	The dynamic brain	keynote
+2013	Max Coltheart	male	Australia	0	The role of semantic information in reading aloud	debate
+2013	Mark Seidenberg	male	USA	0	The role of semantic information in reading aloud	debate
+2013	Miriam Faust	female	Israel	0	The role of the right hemisphere in figurative language processing	debate
+2013	Alexander Rapp	male	Germany	0	The role of the right hemisphere in figurative language processing	debate
+2013	Robert Knight	male	USA	0	Language viewed from direct cortical recordings	keynote
+2014	Willem Levelt	male	Netherlands	0	Localism vs. holism: The historical origins of studying language and the brain	keynote
+2014	Constance Scharff	female	Germany	0	Singing in the (b)rain	keynote
+2014	Pascal Fries	male	Germany	0	Brain rhythms for bottom-up and top-down signaling	keynote
+2014	Steve Small	male	USA	1	What counts as neurobiology of language	debate
+2014	Angela Friederici	female	Germany	0	What counts as neurobiology of language	debate
+2014	Mike Tomasello	male	Germany	0	Communication without conventions	keynote
+2015	Susan Goldin-Meadow	female	USA	0	Gesture as a mechanism of change	keynote
+2015	Peter Strick	male	USA	0	A tale of two primary motor areas	keynote
+2015	Marsel Mesulam	male	USA	0	Revisiting Wernicke's area	keynote
+2015	Marc Raichle	male	USA	0	The restless brain: How intrinsic activity organizes brain function	keynote
+2015	Naftali Raz	male	USA	0	Aging of the brain: Its modifiers and cognitive correlates	symposium
+2015	Lorraine Tyler	female	UK	1	The adaptive brain: brain and cognition in ageing	symposium
+2015	Jonathan Peelle	male	USA	1	Individual differences in auditory and cognitive factors during spoken language comprehension	symposium
+2015	Pascale Tremblay	female	Canada	1	Speech production in aging: From behaviour to brain imaging	symposium
