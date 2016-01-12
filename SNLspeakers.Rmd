@@ -1,52 +1,116 @@
 ---
-title: "SNL Speakers"
+title: "Speaker Gender Balance at Society for the Neurobiology of Language Conferences"
 author: "Jonathan Peelle • <http://jonathanpeelle.net>"
-date: "October 20, 2015"
+date: "January 2016"
 output: pdf_document
 ---
 
 
 Introduction and motivation
----------------------------
+===========================
 
-As we plan future meetings of the [Society for the Neurobiology of Language](http://neurolang.org) (SNL) the topic of speaker diversity has been raised. Although a full treatment of the topic would take up too much space, suffice it to say that most of us—including scientists of all genders—show unconscious bias (Raymond, 2013). In discussions on balance of speakers at conferences it is frequently a useful first step to look at the data on actual speakers (Martin, 2014). In that spirit, I've put together this short summary of previous SNL speakers.
+Gender gaps in science are routinely documented in publishing, pay, hiring, and family (Shen, 2013). As we plan future meetings of the [Society for the Neurobiology of Language](http://neurolang.org) (SNL) the topic of speaker diversity has very sensibly been raised.  It is well established that most of us—including scientists of all genders—show unconscious bias (Raymond, 2013; Valian, 1999), which contributes to these disparities. Balance in the gender of conference speakers is one way to counter this bias.
 
-I've uploaded the data and analysis (i.e., this document, written in Rmarkdown) to a public github repository so that others can view and contribute: <https://github.com/jpeelle/SNLspeakers>. 
+As a first step in considering what we might want speaker gender balance to look like at SNL meetings, it is useful to look at the data on actual speakers at prior meetings (Martin, 2014). In that spirit, I have put together this summary of previous SNL speakers.
+
+To provide some context for the gender distribution in the field of the neurobiology of language, I have looked at authors in *Brain and Language*, a speciality journal closely aligned with the interests of SNL. There are sensible arguments to be made for equal gender representation in conference speakers, regardless of the overall gender balance in a particular field. That is, even in a field that contains professionals of predominantly one gender, it is still beneficial to have equal gender representation, which can increase diversity of ideas and support junior academics who do not fit the traditional stereotype. Nevertheless, the "overall gender distribution in a field" is sometimes used to guage the ease with which gender parity might be acheieved. 
+
+I have uploaded all data and analysis to a public github repository so that others can view and contribute: <https://github.com/jpeelle/SNLspeakers>. (When used, file names refer to files in this repository.) Additional analyses and future extensions are very welcome!
 
 
 
 Data
-----
+====
+
+
+SNL speaker data
+----------------
 
 I obtained data on speakers from PDFs of previous meeting programs, downloaded from <http://www.neurolang.org/previous/> on October 19, 2015.
 
 I created a spreadsheet listing speakers for each year, along with their gender, country, type of talk (keynote, debate, symposium), and so on, in `SNLspeakers_data.tsv` (tab-delimited text file). The data cover 7 years, 2009-2015 inclusive.
 
-I determined sex and country information based on my best guesses from the program and assumptions based on photos or first names. I judged "board membership" based on the current board published in the PDF program from each year. (My impression is that I may have missed some speakers who had society affiliations of other sorts.)
+I determined gender and country information based on my best guesses from the program and assumptions based on photos or first names. I judged "board membership" based on the current board published in the PDF program from each year.
 
 Although the programs refer to "panel" discussions, I've used the term "debate", which is more common in practice when talking about past SNL meetings.
 
-I'm including all relevant code in this document, which you should be able to paste in to an R console and recreate the numbers and plots. You can see the Rmarkdown source (`SNLspeakers.Rmd`) for the plain-text version.
+I did not include the 2014 symposium ("A neurobiology of naturalistic language use?") as I believe this was contributed rather than invited, though the balance was similar to other talk categories (3/4 male speakers).
+
+
+Brain and Language Author Data
+------------------------------
+
+I manually went through the first three volumes from 2015 of *Brian and Language* on the [ScienceDirect website](http://www.sciencedirect.com/science/journal/0093934X/). I entered basic article and author data in `author_data.tsv`. I included all types of original research articles, but not errata. Again, I assigned gender based on likelihood given authors' first names or photos found on academic websites.
+
+
+Code
+----
+
+All of the relevant R code is included, meaning you should be able to paste in to an R console and recreate the numbers and plots. You can view the Rmarkdown source (`SNLspeakers.Rmd`) for a plain-text version.
 
 ```{r}
-# Preliminary R code: libraries we'll use, and read in the data
+# Preliminary R code
 
+# Install divergingPips package for diverging pips plots (if not installed)
+if("divergingPips" %in% rownames(installed.packages()) == FALSE) {
+    if("devtools" %in% rownames(installed.packages()) == FALSE) {  
+       install.packages('devtools') # if necessary
+    }
+  
+    devtools::install_github("richarddmorey/divergingPips", subdir = "divergingPips")
+}
+
+# Libraries we'll use
 library("ggplot2")
+library("divergingPips")
+
+
+# Read in the data for SNL speakers and paper authors
 data <- read.csv("SNLspeakers_data.tsv", header = TRUE, sep = "\t")
+authorData <- read.csv("author_data.tsv", header = TRUE, sep = "\t")
 
 ```
 
 
-Results
--------
 
-Between 2009-2015 SNL has had 47 total speakers, of whom 14 (30%) have been women. No year has had more than 38% female speakers.
+Results
+=======
+
+
+SNL Speakers
+------------
+
+Between 2009-2015 SNL has had 47 total speakers, of whom 14 (30%) have been female. No year has had more than 38% female speakers.
 
 ```{r}
 summary(data$gender)
-ggplot(data, aes(factor(year), fill = factor(gender))) + geom_bar() + 
-  xlab("Year") +
-  ylab("Number of speakers")
+
+# I used aggregate to get counts, which I then entered into an array for plotting
+# aggregate(data$gender, list(data$year), FUN="summary")
+
+frq = array ( c(1, 7,
+                2, 4,
+                2, 4,
+                2, 4,
+                2, 5,
+                2, 4,
+                3, 5),
+              dim = c(2,7))
+
+rownames(frq) = c("# Women", "# Men")
+colnames(frq) = 2009:2015
+
+diverging_pip_plot(frq, bar.width = .6, bar.width.n = 1, box = TRUE, 
+                   bar.col = c(rgb(51, 204, 51, maxColorValue = 255), "gray"),
+                   xlab = "year",
+                   sym = TRUE)
+
+
+
+# Alternatively, you could use ggplot
+#ggplot(data, aes(factor(year), fill = factor(gender))) + geom_bar() + 
+#  xlab("Year") +
+#  ylab("Number of speakers")
 ```
 
 
@@ -58,39 +122,90 @@ The pattern is fairly similar across talk type, with the exception being equal g
 
 aggregate(data$gender, list(data$talkType), FUN="summary")
 
-ggplot(data, aes(factor(talkType), fill = factor(gender))) + geom_bar() + 
-  xlab("Talk type") +
-  ylab("Number of speakers")
+#ggplot(data, aes(factor(talkType), fill = factor(gender))) + geom_bar() + 
+#  xlab("Talk type") +
+#  ylab("Number of speakers")
 
 ```
 
 
 
 
+*Brain and Language* Authors
+----------------------------
+
+During the first three months of 2015 there were 159 authors published in *Brain and Language*, of whom 82 (52%) were women.
+
+
+```{r}
+summary(authorData$gender)
+
+# Diverging pips help
+#diverging_pip_plot(ns, bar.width = 0.3, bar.width.n = 2,
+#  line.col = c("white", "white"), line.wd = 1, bar.col = c("red", "blue"),
+#  xlab = "", box = TRUE, tick.every = 5, sym = FALSE,
+#  cluster.width = 0.3, panel.lty = 0, stacked = FALSE, hist = FALSE,
+#  top.cex = 1)
+
+# I used aggregate to get counts, which I then entered into an array for plotting
+# aggregate(authorData$gender, list(authorData$issueNum), FUN="summary")
+
+frq = array ( c(11, 11,
+                40, 34,
+                31, 32),
+              dim = c(2,3))
+
+rownames(frq) = c("# Women", "# Men")
+colnames(frq) = 1:3
+
+diverging_pip_plot(frq, bar.width = .6, bar.width.n = 3, box = TRUE, 
+                   bar.col = c(rgb(51, 204, 51, maxColorValue = 255), "gray"),
+                   xlab = "month",
+                   sym = TRUE)
+
+
+# As an alternative, you could use ggplot
+#ggplot(authorData, aes(factor(issueNum), fill = factor(gender))) + geom_bar() +
+#  xlab("Issue") +
+#  ylab("Number of authors")
+
+```
+
+
+The breakdown was similar across author type (first author, middle author, last author).
+
+```{r}
+aggregate(authorData$gender, list(authorData$authorType), FUN="summary")
+```
+
+
 Comment
--------
+=======
 
-For the first 7 years SNL has had an average 70/30 balance of male-to-female speakers. If our goal is to have approximately equal numbers of male and female speakers overall, we should aim for 70% female speakers for the next 7 years (through SNL2022).
+For the first 7 years SNL has had an average 70/30 balance of male-to-female speakers. At first glance this 70/30 split does not appear to reflect the overall distribution of scientists in the field, which *Brain and Language* authors suggest is closer to 50% female.
 
-(If that 70% number sounds odd to you, it did to me also. But it did **not** seem nearly as odd for the past 7 years when we had 70% male speakers. That mismatch is unconscious gender bias in a nutshell.)
-
-A few useful articles and blog posts on speaker diversity:
+Although the primary aim of this document is to be descriptive rather than prescriptive, a few useful articles and blog posts on speaker diversity may help provide some additional context or suggestions on acheiving a more balanced set of conference speakers:
 
 * The aforementioned Martin (2014) [Ten simple rules to achieve conference speaker gender balance](http://dx.doi.org/10.1371/journal.pcbi.1003903)
 * [Increasing diversity at your conference](http://www.ashedryden.com/blog/increasing-diversity-at-your-conference) by Ashe Dryden
 * [Suggestions for speaker diversity](http://phylogenomics.blogspot.com/2014/10/some-suggestions-for-having-diverse.html) by Jonathan Eisen
+
+One possible goal in conference organizing is to ensure approximately equal numbers of male and female speakers. Given that so far SNL has had 70% male speakers for the first 7 years, if our goal were to have approximately equal numbers of male and female speakers overall, we should aim for 70% female speakers for the next 7 years (through SNL in 2022).
+
+(If that 70% number sounds odd to you, it did to me also. But it did **not** seem nearly as odd to me as an attendee for most of the past 7 conferences when we had 70% male speakers. That mismatch is unconscious gender bias in a nutshell.)
 
 I have not looked at other types of speaker diversity, such as nationality, race/ethnicity, career stage, etc. These would be natural additional areas to include in future discussions on diversity and inclusiveness.
 
 
 
 References
-----------
+==========
 
 Martin JL (2014) Ten simple rules to achieve conference speaker gender balance. PLOS Computational Biology 10:e1003903. <http://dx.doi.org/10.1371/journal.pcbi.1003903> 
 
 Raymond J (2013) Sexist attitudes: Most of us are biased. Nature 495:33-34. <http://dx.doi.org/10.1038/495033a> ([PDF](http://raymondlab.weebly.com/uploads/2/0/9/9/20996868/nature_-_most_of_us_are_biased.pdf))
 
+Shen H (2013) Mind the gender gap. Nature 495:22-24. <http://dx.doi.org/10.1038/495022a>
 
-
+Valian V (1999) Why so slow? The advancement of women. Cambridge, Massachusetts: The MIT Press.
 
