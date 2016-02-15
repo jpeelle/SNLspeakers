@@ -11,11 +11,11 @@ Introduction and motivation
 
 Gender gaps in science are routinely documented in publishing, pay, hiring, and family (Shen, 2013). As we plan future meetings of the [Society for the Neurobiology of Language](http://neurolang.org) (SNL) the topic of speaker diversity has very sensibly been raised.  It is well established that most of us—including scientists of all genders—show unconscious bias (Raymond, 2013; Valian, 1999), which contributes to gender disparities. Balance in the gender of conference speakers is one way to counter this unconscious bias.
 
-As a first step in considering what we might want speaker gender balance to look like at SNL meetings, it is useful to look at the data on speakers at prior meetings (Martin, 2014). In that spirit, I have put together this summary of previous SNL speakers.
+As a first step in considering what we might want speaker gender balance to look like at future SNL meetings, it is useful to look at the data on speakers at prior meetings (Martin, 2014). In that spirit, I have put together this summary of previous SNL speakers.
 
 To provide some context for the gender distribution in the field of the neurobiology of language, I have looked at authors in *Brain and Language*, a speciality journal closely aligned with the interests of SNL. There are sensible arguments to be made for equal gender representation in conference speakers, regardless of the overall gender balance in a particular field. That is, even in a field that contains professionals of predominantly one gender, it is still beneficial to have equal gender representation, which can increase diversity of ideas and support junior academics who do not fit traditional stereotypes. Nevertheless, the "overall gender distribution in a field" is sometimes used to gauge the ease with which gender parity might be achieved.
 
-I have uploaded all data and analysis to a public repository so that others can view and contribute: <https://github.com/jpeelle/SNLspeakers>. (When used, file names refer to files in this repository.) Additional analyses and future extensions are very welcome!
+I have uploaded all data and analysis to a public repository so that others can view and contribute: <https://github.com/jpeelle/SNLspeakers>. When used, file names refer to files in this repository. Additional analyses and future extensions are very welcome!
 
 
 
@@ -182,9 +182,9 @@ aggregate(authorData$gender, list(authorData$authorType), FUN="summary")
 Comment
 =======
 
-For the first 7 years SNL has had an average 70/30 balance of men-to-women speakers. At first glance this 70/30 split does not appear to reflect the overall distribution of scientists in the field, which *Brain and Language* authors suggest is closer to 50% women.
+For the first 7 years SNL has had an average 70/30 balance of men-to-women speakers. At first glance this 70/30 split does not appear to reflect the overall distribution of scientists in the field, which *Brain and Language* author data suggest is closer to 50% women.
 
-Although the primary aim of this document is to be descriptive rather than prescriptive, a few useful articles and blog posts on speaker diversity may help provide some additional context or suggestions on achieving a more balanced set of conference speakers:
+Although the primary aim of this document is to be descriptive rather than prescriptive, a few useful articles and blog posts on speaker diversity may help provide additional context and suggestions on achieving a more balanced set of conference speakers:
 
 * The aforementioned Martin (2014) [Ten simple rules to achieve conference speaker gender balance](http://dx.doi.org/10.1371/journal.pcbi.1003903)
 * [Increasing diversity at your conference](http://www.ashedryden.com/blog/increasing-diversity-at-your-conference) by Ashe Dryden
@@ -193,6 +193,8 @@ Although the primary aim of this document is to be descriptive rather than presc
 One possible goal in conference organizing is to ensure approximately equal numbers of men and women speakers. Given that for the first 7 years 70% of the SNL speakers have been men, if our goal were to have approximately equal numbers of men and women speakers overall, we should aim for 70% women speakers for the next 7 years (through SNL in 2022).
 
 (If that 70% number sounds odd to you, it did to me also. But it did **not** seem nearly as odd to me as an attendee for most of the past 7 conferences when 70% of the speakers were men. That mismatch is unconscious gender bias in a nutshell.)
+
+(When asked about gender balance on the US Supreme court, Justice Ruth Bader Ginsberg responded: "So now the perception is, yes, women are here to stay. And when I'm sometimes asked when will there be enough [women on the Supreme court]? And I say when there are nine, people are shocked. But there'd been nine men, and nobody's ever raised a question about that.")
 
 I have not looked at other types of speaker diversity, such as nationality, race/ethnicity, career stage, etc. These would be natural additional areas to include in future discussions on diversity and inclusiveness.
 
