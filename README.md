@@ -1,5 +1,5 @@
 Society for the Neurobiology of Language (SNL) Speakers
--------------------------------------------------------
+=======================================================
 
 This document describes the speakers for [SNL][1] from 2009-2015. It was created using [Rmarkdown][2].
 
@@ -15,6 +15,13 @@ The repository contains the following files:
 * SNLspeakers.pdf (the typeset version, with plots)
 * SNLspeakers_data.tsv (tab-delimited data file)
 * author_data.tsv (tab-delimited data file)
+
+
+The initial "complete" version of this analysis covering 2009-2015 was published in The Winnower:
+
+Peelle JE (2016) Speaker gender balance at Society for the Neurobiology of Language conferences 2009–2015. The Winnower 3:e145573.38893. DOI:[10.15200/winn.145573.38893](http://dx.doi.org/10.15200/winn.145573.38893)
+
+If you make use of these data, citing both the github repository and Winnower paper would be appreciated.
 
 
 [1]: http://neurolang.org

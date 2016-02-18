@@ -198,12 +198,18 @@ One possible goal in conference organizing is to ensure approximately equal numb
 
 I have not looked at other types of speaker diversity, such as nationality, race/ethnicity, career stage, etc. These would be natural additional areas to include in future discussions on diversity and inclusiveness.
 
+Citing
+======
+
+The version of this document current as of February 2016 was published on *The Winnower* (Peelle, 2016). If you refer to these data, citing the article and the github repository would be appreciated.
 
 
 References
 ==========
 
 Martin JL (2014) Ten simple rules to achieve conference speaker gender balance. PLOS Computational Biology 10:e1003903. <http://dx.doi.org/10.1371/journal.pcbi.1003903> 
+
+Peelle JE (2016) Speaker gender balance at Society for the Neurobiology of Language Conferences 2009-2015. The Winnower.
 
 Raymond J (2013) Sexist attitudes: Most of us are biased. Nature 495:33-34. <http://dx.doi.org/10.1038/495033a> ([PDF](http://raymondlab.weebly.com/uploads/2/0/9/9/20996868/nature_-_most_of_us_are_biased.pdf))
 
